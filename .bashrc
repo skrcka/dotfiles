@@ -5,6 +5,15 @@ export EDITOR=nvim
 export BROWSER=firefox
 export TERM=alacritty
 
+# sway
+export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland
+export GDK_BACKEND=wayland
+export MOZ_WEBRENDER=1
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
@@ -32,8 +41,10 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 # tmux attach or create named session
 alias tmuxa='tmux new-session -A -s'
 
-# Assetto Corsa server start
-alias corsaserver='wine /home/skrcka/Games/SteamLibrary/steamapps/common/assettocorsa/server/acServer.exe'
+# v for neovim
+alias v='nvim'
+alias vim='nvim'
+alias vi='nvim'
 
 # copy current dir
 alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
@@ -44,7 +55,6 @@ alias lp='echo nope, lp disabled in .bashrc'
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# color ls
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
